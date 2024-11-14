@@ -1,1 +1,8 @@
-.node_modules
+# Ignoring node modules
+/node_modules
+
+# Ignoring build folder
+/dist
+
+# Ignoring environment files
+.env
