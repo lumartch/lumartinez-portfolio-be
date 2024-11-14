@@ -6,3 +6,6 @@
 
 # Ignoring environment files
 .env
+
+# Ignoring VS Code
+.vscode
