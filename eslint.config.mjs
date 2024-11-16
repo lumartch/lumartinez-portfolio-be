@@ -1,13 +1,22 @@
-import config from "eslint-config-standard";
+import eslint from "@eslint/js";
 import stylisticJs from "@stylistic/eslint-plugin-js";
 import perfectionist from "eslint-plugin-perfectionist";
 import unusedImports from "eslint-plugin-unused-imports";
-
+import tseslint from "typescript-eslint";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
-    files: ["./src/**/*.{ts}"],
+    files: ["./src/**/*.{js, jsx, ts, tsx, mjs}"],
+  },
+  {
+    ignores: [
+      ".github/*",
+      ".node_modules/*",
+      ".next/*",
+      ".vscode/*",
+      "eslint.config.mjs",
+    ],
   },
   {
     plugins: {
@@ -28,22 +37,17 @@ export default [
     },
   },
   {
-    rules: {
-      "no-multi-spaces": ["error"],
-      quotes: ["error", "single"],
-      semi: ["error", "always"],
-    },
-  },
-  {
     plugins: {
       "@stylistic/js": stylisticJs,
     },
     rules: {
-      indent: ["error", 4],
       "space-before-function-paren": ["error"],
       "comma-spacing": ["error"],
       "arrow-spacing": ["error"],
       "object-curly-spacing": ["error", "always"],
+      indent: ["error", 4],
+      quotes: ["error", "single"],
+      semi: ["error"],
     },
   },
   {
@@ -54,5 +58,6 @@ export default [
       "perfectionist/sort-imports": "error",
     },
   },
-  ...[].concat(config),
+  eslint.configs.recommended,
+  ...tseslint.configs.recommended,
 ];
