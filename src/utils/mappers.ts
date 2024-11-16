@@ -52,7 +52,7 @@ export const ProjectMapper = {
             html_url: project.web_url,
             id: project.id,
             name: project.name,
-            source: GitSource.GITHUB,
+            source: GitSource.GITLAB,
             ssh_url: project.ssh_url_to_repo,
         };
     }
