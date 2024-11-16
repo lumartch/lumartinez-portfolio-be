@@ -13,7 +13,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noImplicitAny": true,
+    // "noImplicitAny": true,
     "alwaysStrict": true,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true

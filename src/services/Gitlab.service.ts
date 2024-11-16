@@ -9,13 +9,12 @@ export const GitlabService = () => {
     const params = { order_by: 'created_at', sort: 'desc' };
 
     const getGitlabProfile = (username: string) => {
-        const _path = GITLAB_PATHS.userPath.replace(':username', username);
-        return client.get(_path, { headers });
+        return client.get(GITLAB_PATHS.userPath, { headers, params: { username } });
     };
 
     const getGitlabRepos = (username: string, archived: boolean) => {
         const _path = GITLAB_PATHS.reposPath.replace(':username', username);
-        return client.get(_path, { headers, params: { ...params, archived } });
+        return client.get(_path, { headers, params: { archived, ...params } });
     };
 
     return { getGitlabProfile, getGitlabRepos };

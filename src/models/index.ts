@@ -1,3 +1,3 @@
 export { GitApi, Api } from './Api';
-export { Profile } from './Profile';
-export { Project } from './Project';
+export { Profile, GithubProfile, GitlabProfile } from './Profile';
+export { Project, GithubProject, GitlabProject } from './Project';

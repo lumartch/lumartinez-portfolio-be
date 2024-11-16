@@ -19,7 +19,7 @@ export const AppController = () => {
         const { git_source } = matchedData(req);
         const { username } = req.params;
 
-        const { data } = await getProfile(username, git_source);
+        const data = await getProfile(username, git_source);
         res.status(200).send(data);
     });
 
@@ -32,7 +32,7 @@ export const AppController = () => {
         const { git_source, archived } = matchedData(req);
         const { username } = req.params;
 
-        const { data } = await getRepos(username, git_source, archived);
+        const data = await getRepos(username, git_source, archived);
         res.status(200).send(data);
     });
 

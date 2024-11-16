@@ -8,7 +8,7 @@ export const GITHUB_PATHS: GitApi = {
 
 export const GITLAB_PATHS: GitApi = {
     baseUrl: 'https://gitlab.com/api/v4',
-    userPath: '/users?username={username}',
+    userPath: '/users',
     reposPath: '/users/:username/projects',
 };
 

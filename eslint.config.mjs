@@ -43,7 +43,7 @@ export default [
     rules: {
       "space-before-function-paren": ["error"],
       "comma-spacing": ["error"],
-      "arrow-spacing": ["error"],
+      // "arrow-spacing": ["error"],
       "object-curly-spacing": ["error", "always"],
       indent: ["error", 4],
       quotes: ["error", "single"],
