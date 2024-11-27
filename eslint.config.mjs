@@ -45,7 +45,7 @@ export default [
       "comma-spacing": ["error"],
       // "arrow-spacing": ["error"],
       "object-curly-spacing": ["error", "always"],
-      indent: ["error", 4],
+      // indent: ["error", 4],
       quotes: ["error", "single"],
       semi: ["error"],
     },
