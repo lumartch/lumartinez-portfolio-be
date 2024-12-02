@@ -15,7 +15,7 @@ export const GithubService = () => {
     const getGithubProfile = async (username: string) => {
         try {
             const _path = GITHUB_PATHS.userPath.replace(':username', username);
-            const profile = client.get(_path, { headers });
+            const profile = await client.get(_path, { headers });
             return profile;
         } catch (error) {
             if (axios.isAxiosError(error)) {

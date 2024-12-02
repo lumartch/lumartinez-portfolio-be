@@ -1,4 +1,5 @@
 import { GitSource } from '../enums';
+import { GitApiProfileError } from '../middleware';
 import { GithubProfile, GithubProject, GitlabProfile, GitlabProject, Profile, Project } from '../models';
 
 export const ProfileMapper = {
@@ -14,6 +15,9 @@ export const ProfileMapper = {
         };
     },
     fromGitlabToProfile (profile: GitlabProfile): Profile {
+        if (!profile) {
+            throw new GitApiProfileError(404);
+        }
         return {
             avatar_uri: profile.avatar_url,
             email: profile.email,

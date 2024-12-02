@@ -12,9 +12,9 @@ export const GitlabService = () => {
     const headers = { 'Authorization': `Bearer ${API_KEY}` };
     const params = { order_by: 'created_at', sort: 'desc' };
 
-    const getGitlabProfile = (username: string) => {
+    const getGitlabProfile = async (username: string) => {
         try {
-            const profile = client.get(GITLAB_PATHS.userPath, { headers, params: { username } });
+            const profile = await client.get(GITLAB_PATHS.userPath, { headers, params: { username } });
             return profile;
         } catch (error) {
             if (axios.isAxiosError(error)) {
